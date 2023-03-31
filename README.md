@@ -4,11 +4,17 @@
 
 ## Getting Started
 
-This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-generate_release_notes`, add it to your project by running:
+This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-generate_release_notes`, add it to your project by running updating your Gemfile to include this line 
 
 ```bash
-fastlane add_plugin release_notes_generator
+gem "fastlane-plugin-generate_release_notes", git: "https://github.com/DevAgani/fastlane-plugin-release_notes_generator"
 ```
+
+Then be sure to install the gems by running 
+```bash
+bundle install
+```
+
 
 ## About release_notes_generator
 
@@ -17,8 +23,7 @@ A fastlane plugin that creates release notes following a particular format speci
 **Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
 
 ## Example
-
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
+In your Fastfile call the `generate_release_notes` action
 
 **Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
 
