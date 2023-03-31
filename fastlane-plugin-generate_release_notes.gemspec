@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-generate_release_notes'
   spec.version       = Fastlane::GenerateReleaseNotes::VERSION
   spec.author        = 'George Nyakundi'
-  spec.email         = 'georgen@backbase.com'
+  spec.email         = 'dev.things.ke@gmail.com'
 
   spec.summary       = 'A fastlane plugin that creates release notes following a particular format specified by the team'
   # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-generate_release_notes"
