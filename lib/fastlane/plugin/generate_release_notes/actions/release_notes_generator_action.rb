@@ -3,9 +3,11 @@ require_relative '../helper/release_notes_generator_helper'
 
 module Fastlane
   module Actions
-    class ReleaseNotesGeneratorAction < Action
+    class GenerateReleaseNotesAction < Action
       def self.run(params)
-        UI.message("The release_notes_generator plugin is working!")
+        Helper::GenerateReleaseNotesHelper.check_if_file_exists
+        Helper::GenerateReleaseNotesHelper.create_file
+        Helper::GenerateReleaseNotesHelper.add_placeholder_content
       end
 
       def self.description

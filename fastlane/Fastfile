@@ -1,3 +1,3 @@
 lane :test do
-  release_notes_generator
+  generate_release_notes
 end

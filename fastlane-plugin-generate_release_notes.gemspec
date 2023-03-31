@@ -1,15 +1,15 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fastlane/plugin/release_notes_generator/version'
+require 'fastlane/plugin/generate_release_notes/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fastlane-plugin-release_notes_generator'
-  spec.version       = Fastlane::ReleaseNotesGenerator::VERSION
+  spec.name          = 'fastlane-plugin-generate_release_notes'
+  spec.version       = Fastlane::GenerateReleaseNotes::VERSION
   spec.author        = 'George Nyakundi'
   spec.email         = 'georgen@backbase.com'
 
   spec.summary       = 'A fastlane plugin that creates release notes following a particular format specified by the team'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-release_notes_generator"
+  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-generate_release_notes"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)

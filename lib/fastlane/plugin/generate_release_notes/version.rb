@@ -1,5 +1,5 @@
 module Fastlane
-  module ReleaseNotesGenerator
+  module GenerateReleaseNotes
     VERSION = "0.1.0"
   end
 end
