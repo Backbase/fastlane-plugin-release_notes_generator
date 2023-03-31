@@ -11,15 +11,37 @@ module Fastlane
       # Checks whether a release notes/ changelog file exists in the project
       def self.check_if_file_exists
         UI.message("Checking if file exists!")
-      end
-
-      # Create a release notes/ changelog file in the root of the project
-      def self.create_file 
-        UI.message("Creating release notes/changelog!")
+        releaseNotesFile = "./RELEASE_NOTES.md"
+        FileUtils.touch(releaseNotesFile)
       end
 
       def self.add_placeholder_content
         UI.message("Adding placeholder content!")
+        releaseNotesFile = "./RELEASE_NOTES.md"
+        # Write content to file
+        File.write(releaseNotesFile, GenerateReleaseNotesHelper.placeholder_content)
+      end
+
+      def self.placeholder_content 
+        return """
+## [vX.Y.Z]
+A short introduction to the release, whether it's a minor, major or breaking release
+
+### New / Added
+- List all new features here
+
+### Bug fixes
+- List all bug fixes here
+
+### Breaking changes
+- List all breaking changes here
+
+### Deprecations / Updates
+- List all deprecations here
+
+### Migration Steps
+- A detailed guide on how to migrate to this version from an earlier version
+        """
       end
     end
   end

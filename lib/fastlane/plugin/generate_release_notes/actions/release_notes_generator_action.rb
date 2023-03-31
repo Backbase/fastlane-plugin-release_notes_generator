@@ -6,7 +6,6 @@ module Fastlane
     class GenerateReleaseNotesAction < Action
       def self.run(params)
         Helper::GenerateReleaseNotesHelper.check_if_file_exists
-        Helper::GenerateReleaseNotesHelper.create_file
         Helper::GenerateReleaseNotesHelper.add_placeholder_content
       end
 
