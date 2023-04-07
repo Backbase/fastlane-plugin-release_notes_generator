@@ -7,7 +7,7 @@
 This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-generate_release_notes`, add it to your project by running updating your Gemfile to include this line 
 
 ```bash
-gem "fastlane-plugin-generate_release_notes", git: "https://github.com/DevAgani/fastlane-plugin-release_notes_generator"
+gem "fastlane-plugin-generate_release_notes", git: "https://github.com/Backbase/fastlane-plugin-release_notes_generator"
 ```
 
 Then be sure to install the gems by running 
