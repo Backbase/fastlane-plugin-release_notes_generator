@@ -5,8 +5,12 @@ module Fastlane
   module Actions
     class GenerateReleaseNotesAction < Action
       def self.run(params)
-        Helper::GenerateReleaseNotesHelper.check_if_file_exists
-        Helper::GenerateReleaseNotesHelper.add_placeholder_content
+        # Extract params
+        format = params[:format] || "json"
+        version = params[:version] || "x.y.z"
+
+        Helper::GenerateReleaseNotesHelper.check_if_file_exists(format)
+        Helper::GenerateReleaseNotesHelper.add_placeholder_content(format, version)
       end
 
       def self.description
