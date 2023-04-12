@@ -5,11 +5,10 @@ require 'fastlane/plugin/generate_release_notes/version'
 Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-generate_release_notes'
   spec.version       = Fastlane::GenerateReleaseNotes::VERSION
-  spec.author        = 'George Nyakundi'
-  spec.email         = 'dev.things.ke@gmail.com'
+  spec.author        = 'Backbase B.V'
 
   spec.summary       = 'A fastlane plugin that creates release notes following a particular format specified by the team'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-generate_release_notes"
+  spec.homepage      = "https://github.com/backbase/fastlane-plugin-generate_release_notes"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
