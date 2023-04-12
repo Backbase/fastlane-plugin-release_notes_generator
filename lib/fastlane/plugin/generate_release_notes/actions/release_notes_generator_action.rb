@@ -14,7 +14,7 @@ module Fastlane
       end
 
       def self.authors
-        ["George Nyakundi"]
+        ["Backbase B.V"]
       end
 
       def self.return_value
@@ -28,11 +28,16 @@ module Fastlane
 
       def self.available_options
         [
-          # FastlaneCore::ConfigItem.new(key: :your_option,
-          #                         env_name: "RELEASE_NOTES_GENERATOR_YOUR_OPTION",
-          #                      description: "A description of your option",
-          #                         optional: false,
-          #                             type: String)
+          FastlaneCore::ConfigItem.new(key: :format,
+            env_name: "RNG_FORMAT",
+            description: "md for markdown or json for JSON",
+            optional: true,
+            type: String),
+          FastlaneCore::ConfigItem.new(key: :version,
+            env_name: "RNG_VERSION",
+            description: "Version being released",
+            optional: true,
+            type: String)
         ]
       end
 
