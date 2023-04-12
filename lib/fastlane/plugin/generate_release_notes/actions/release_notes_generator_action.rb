@@ -32,12 +32,16 @@ module Fastlane
             env_name: "RNG_FORMAT",
             description: "md for markdown or json for JSON",
             optional: true,
-            type: String),
+            type: String,
+            default_value: "json"
+          ),
           FastlaneCore::ConfigItem.new(key: :version,
             env_name: "RNG_VERSION",
             description: "Version being released",
             optional: true,
-            type: String)
+            type: String,
+            default_value: "X.Y.Z"
+          )
         ]
       end
 
