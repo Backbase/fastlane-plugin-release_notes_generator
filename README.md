@@ -23,7 +23,13 @@ A fastlane plugin that creates release notes following a particular format speci
 **Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
 
 ## Example
-In your Fastfile call the `generate_release_notes` action
+In your Fastfile call the `generate_release_notes` action, you can pass the the following parameters
+ - `format` either `json` or `md` for json and markdown, defaults to `json`
+ - `version` the version the release, this will default to `x.y.z`
+
+ ```ruby
+    generate_release_notes(format: "json", version: "0.2.1")
+ ```
 
 **Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
 
