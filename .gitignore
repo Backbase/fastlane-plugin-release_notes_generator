@@ -11,3 +11,6 @@ fastlane/report.xml
 coverage
 test-results
 vendor
+
+RELEASE_NOTES.json
+RELEASE_NOTES.md
