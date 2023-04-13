@@ -2,6 +2,7 @@ require 'fastlane/action'
 require_relative '../helper/release_notes_generator_helper'
 
 module Fastlane
+  ConfigItem = FastlaneCore::ConfigItem unless Fastlane.const_defined?(:ConfigItem)
   module Actions
     class GenerateReleaseNotesAction < Action
       def self.run(params)
@@ -32,20 +33,18 @@ module Fastlane
 
       def self.available_options
         [
-          FastlaneCore::ConfigItem.new(key: :format,
+          ConfigItem.new(key: :format,
             env_name: "RNG_FORMAT",
             description: "md for markdown or json for JSON",
             optional: true,
             type: String,
-            default_value: "json"
-          ),
-          FastlaneCore::ConfigItem.new(key: :version,
+            default_value: "json"),
+          ConfigItem.new(key: :version,
             env_name: "RNG_VERSION",
             description: "Version being released",
             optional: true,
             type: String,
-            default_value: "X.Y.Z"
-          )
+            default_value: "X.Y.Z")
         ]
       end
 
