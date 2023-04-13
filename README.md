@@ -31,6 +31,36 @@ In your Fastfile call the `generate_release_notes` action, you can pass the the 
     generate_release_notes(format: "json", version: "0.2.1")
  ```
 
+ When the plugin is run successfully, for
+ - format: "json" , the `RELEASE_NOTES.json` will be updated the placeholder detail as below
+    ```json
+    [
+      {
+        "version": "X.Y.Z",
+        "description": "A short introduction to the release, whether it's a minor, major or breaking release",
+        "new_features": [
+          "List all new features here"
+        ],
+        "bug_fixes": [
+          "List all bug fixes here"
+        ],
+        "breaking_changes": [
+          "List all breaking changes here"
+        ],
+        "deprecations": [
+          "List all deprecations here"
+        ],
+        "migration_steps": [
+          "A detailed guide on how to migrate to this version from an earlier version"
+        ],
+        "security_advisory": [
+          "Any security advisories"
+        ]
+      }
+    ]
+    ```
+
+
 **Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
 
 ## Run tests for this plugin
