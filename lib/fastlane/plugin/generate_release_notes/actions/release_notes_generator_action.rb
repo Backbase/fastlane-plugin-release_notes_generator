@@ -2,11 +2,16 @@ require 'fastlane/action'
 require_relative '../helper/release_notes_generator_helper'
 
 module Fastlane
+  ConfigItem = FastlaneCore::ConfigItem unless Fastlane.const_defined?(:ConfigItem)
   module Actions
     class GenerateReleaseNotesAction < Action
       def self.run(params)
-        Helper::GenerateReleaseNotesHelper.check_if_file_exists
-        Helper::GenerateReleaseNotesHelper.add_placeholder_content
+        # Extract params
+        format = params[:format] || "json"
+        version = params[:version] || "x.y.z"
+
+        Helper::GenerateReleaseNotesHelper.check_if_file_exists(format)
+        Helper::GenerateReleaseNotesHelper.add_placeholder_content(format, version)
       end
 
       def self.description
@@ -14,7 +19,7 @@ module Fastlane
       end
 
       def self.authors
-        ["George Nyakundi"]
+        ["Backbase B.V"]
       end
 
       def self.return_value
@@ -28,11 +33,18 @@ module Fastlane
 
       def self.available_options
         [
-          # FastlaneCore::ConfigItem.new(key: :your_option,
-          #                         env_name: "RELEASE_NOTES_GENERATOR_YOUR_OPTION",
-          #                      description: "A description of your option",
-          #                         optional: false,
-          #                             type: String)
+          ConfigItem.new(key: :format,
+            env_name: "RNG_FORMAT",
+            description: "md for markdown or json for JSON",
+            optional: true,
+            type: String,
+            default_value: "json"),
+          ConfigItem.new(key: :version,
+            env_name: "RNG_VERSION",
+            description: "Version being released",
+            optional: true,
+            type: String,
+            default_value: "X.Y.Z")
         ]
       end
 

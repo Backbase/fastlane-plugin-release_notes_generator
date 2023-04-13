@@ -1,4 +1,4 @@
-## [vX.Y.Z]
+## [vx.y.z]
 A short introduction to the release, whether it's a minor, major or breaking release
 
 ### New / Added
