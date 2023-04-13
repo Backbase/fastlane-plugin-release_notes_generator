@@ -33,12 +33,11 @@ module Fastlane
         else
           placeholder_content = GenerateReleaseNotesHelper.json_placeholder_content(version)
 
-          previous_content = JSON.parse(File.read(RELEASE_NOTES_JSON_FILE))
-          new_content = previous_content
-          new_content << placeholder_content
+          file_contents = JSON.parse(File.read(RELEASE_NOTES_JSON_FILE))
+          file_contents << placeholder_content
 
           File.open(RELEASE_NOTES_JSON_FILE, "w") do |f|
-            f.puts(JSON.pretty_generate(new_content))
+            f.puts(JSON.pretty_generate(file_contents))
           end
         end
       end
@@ -66,12 +65,13 @@ A short introduction to the release, whether it's a minor, major or breaking rel
 
       def self.json_placeholder_content(version)
         return { "version" => version,
-          "new_features" => [],
-          "bug_fixes" => [],
-          "breaking_changes" => [],
-          "deprecations" => [],
-          "migration_steps" => [],
-          "security_advisory" => [] }
+          "description" => "A short introduction to the release, whether it's a minor, major or breaking release",
+          "new_features" => ["List all new features here"],
+          "bug_fixes" => ["List all bug fixes here"],
+          "breaking_changes" => ["List all breaking changes here"],
+          "deprecations" => ["List all deprecations here"],
+          "migration_steps" => ["A detailed guide on how to migrate to this version from an earlier version"],
+          "security_advisory" => ["Any security advisories"] }
       end
     end
   end

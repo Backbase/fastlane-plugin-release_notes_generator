@@ -32,7 +32,8 @@ In your Fastfile call the `generate_release_notes` action, you can pass the the 
  ```
 
  When the plugin is run successfully, for
- - format: "json" , the `RELEASE_NOTES.json` will be updated the placeholder detail as below
+ - `format: "json"` , the `RELEASE_NOTES.json` will be updated the placeholder detail as below
+
     ```json
     [
       {
@@ -59,9 +60,27 @@ In your Fastfile call the `generate_release_notes` action, you can pass the the 
       }
     ]
     ```
+  - `format: "md"`, the `RELEASE_NOTES.md` will be updated the placeholder detail as below
 
+    ```markdown
+    ## [vX.Y.Z]
+    A short introduction to the release, whether it's a minor, major or breaking release
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+    ### New / Added
+    - List all new features here
+
+    ### Bug fixes
+    - List all bug fixes here
+
+    ### Breaking changes
+    - List all breaking changes here
+
+    ### Deprecations / Updates
+    - List all deprecations here
+
+    ### Migration Steps
+    - A detailed guide on how to migrate to this version from an earlier version
+    ```
 
 ## Run tests for this plugin
 
